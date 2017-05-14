@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normalText" >16sp</dimen>
+    <dimen name="biggerText" >18sp</dimen>
+    <dimen name="largerText" >20sp</dimen>
+    <dimen name="small_margin" >8dp</dimen>
+    <dimen name="veryLargeText" >25sp</dimen>
+    <dimen name="hugeText" >32sp</dimen>
+    <dimen name="imageDimen" >80dp</dimen>
+</resources>

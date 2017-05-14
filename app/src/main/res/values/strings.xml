@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Java test</string>
+    <string name="isTrue">True</string>
+    <string name="isTruenot">False</string>
+    <string name="headline">Test your Java skills?</string>
+    <string name="question1">1. Java keywords are?</string>
+    <string name="question2">2. What is the meaning of the return data type void?</string>
+    <string name="question3">3. Is the result true or false? \n \n (x = 5, y = 0, z = 8) \n (x &gt;= 0 &amp;&amp; x &lt; 10) || (y != 0 || z &lt; 10)</string>
+    <string name="question4">4. After the end of the cycle the variable will be? \n\n int myVariable = 0; \n for (int i = 0; i &lt;= 8; i += 2) { \n myVariable += i; \n }</string>
+    <string name="question1answer1">this</string>
+    <string name="question1answer2">throw</string>
+    <string name="question1answer3">show</string>
+    <string name="question2answer1">empty memory space is returned</string>
+    <string name="question2answer2">void is not supported in Java</string>
+    <string name="question2answer3">void returns no data type</string>
+    <string name="question4hint">Type result here</string>
+    <string name="Reset">Reset</string>
+    <string name="submit">Submit</string>
+    </resources>
+
