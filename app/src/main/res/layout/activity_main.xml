@@ -8,7 +8,7 @@
     <LinearLayout
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/bacground"
         android:orientation="vertical"
         android:paddingBottom="@dimen/small_margin"

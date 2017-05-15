@@ -7,6 +7,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.example.android.javatest.R.id.q1a1;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     boolean questionOneTotal;
     boolean question2;
     boolean question3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     //Calculate total score for all questions
     public void calculateScore(View view) {
         //Calculates first question
-        CheckBox firstQuestion = (CheckBox) findViewById(R.id.q1a1);
+        CheckBox firstQuestion = (CheckBox) findViewById(q1a1);
         boolean questionOne = firstQuestion.isChecked();
         CheckBox firstQuestion2 = (CheckBox) findViewById(R.id.q1a2);
         boolean questionOne2 = firstQuestion2.isChecked();
@@ -58,8 +60,14 @@ public class MainActivity extends AppCompatActivity {
             scoreTotal = scoreTotal + 1;
             question4 = true;
         }
+        //Make toast
+        Toast.makeText(this, createTestSummary(scoreTotal, questionOneTotal, question2, question3, question4), Toast.LENGTH_SHORT).show();
+
+        //call the displayResult method
 
         displayResult();
+
+        //reset variables before next submit click
         scoreTotal = 0;
         questionOneTotal = false;
         question2 = false;
@@ -75,21 +83,32 @@ public class MainActivity extends AppCompatActivity {
 
     //Create result message
     public String createTestSummary(int scoreTotal, boolean questionOneTotal, boolean question2, boolean question3, boolean question4) {
-        String displaytotalScore = "Score: " + scoreTotal + " from 4";
-        displaytotalScore += "\nQuestion 1: " + questionOneTotal;
-        displaytotalScore += "\nQuestion 2: " + question2;
-        displaytotalScore += "\nQuestion 3: " + question3;
-        displaytotalScore += "\nQuestion 4: " + question4;
+        String javaquestion1 = getResources().getString(R.string.javaQuestion1);
+        String javaquestion2 = getResources().getString(R.string.javaQuestion2);
+        String javaquestion3 = getResources().getString(R.string.javaQuestion3);
+        String javaquestion4 = getResources().getString(R.string.javaQuestion4);
+        String javaScore = getResources().getString(R.string.javaScore);
+        String javaFrom = getResources().getString(R.string.javaFrom);
+        String javaResult1 = getResources().getString(R.string.javaResult1);
+        String javaResult2 = getResources().getString(R.string.javaResult2);
+        String javaResult3 = getResources().getString(R.string.javaResult3);
+        String javaResult4 = getResources().getString(R.string.javaResult4);
+        String javaResult5 = getResources().getString(R.string.javaResult5);
+        String displaytotalScore = javaScore + scoreTotal + javaFrom;
+        displaytotalScore += javaquestion1 + questionOneTotal;
+        displaytotalScore += javaquestion2 + question2;
+        displaytotalScore += javaquestion3 + question3;
+        displaytotalScore += javaquestion4 + question4;
         if (scoreTotal == 4) {
-            displaytotalScore += "\nAmazing result - all correct.";
+            displaytotalScore += javaResult1;
         } else if (scoreTotal == 3) {
-            displaytotalScore += "\nAlmost correct - one mistake.";
+            displaytotalScore += javaResult2;
         } else if (scoreTotal == 2) {
-            displaytotalScore += "\nNot bad - two mistakes.";
+            displaytotalScore += javaResult3;
         } else if (scoreTotal == 1) {
-            displaytotalScore += "\nYour results could be better :-( - three mistakes ";
+            displaytotalScore += javaResult4;
         } else if (scoreTotal == 0) {
-            displaytotalScore += "\nYou should learn more - four mistakes";
+            displaytotalScore += javaResult5;
         }
         return displaytotalScore;
     }
@@ -101,6 +120,33 @@ public class MainActivity extends AppCompatActivity {
         question2 = false;
         question3 = false;
         question4 = false;
+
+        CheckBox firstQuestion = (CheckBox) findViewById(q1a1);
+        if (firstQuestion.isChecked())
+            firstQuestion.toggle();
+        CheckBox firstQuestion2 = (CheckBox) findViewById(R.id.q1a2);
+        if (firstQuestion2.isChecked())
+            firstQuestion2.toggle();
+        CheckBox firstQuestion3 = (CheckBox) findViewById(R.id.q1a3);
+        if (firstQuestion3.isChecked())
+            firstQuestion3.toggle();
+        RadioButton secondQuestion1 = (RadioButton) findViewById(R.id.q2a1);
+        if (secondQuestion1.isChecked())
+            secondQuestion1.setChecked(false);
+        RadioButton secondQuestion2 = (RadioButton) findViewById(R.id.q2a2);
+        if (secondQuestion2.isChecked())
+            secondQuestion2.setChecked(false);
+        RadioButton secondQuestion3 = (RadioButton) findViewById(R.id.q2a3);
+        if (secondQuestion3.isChecked())
+            secondQuestion3.setChecked(false);
+        RadioButton thirdQuestion1 = (RadioButton) findViewById(R.id.q3a1);
+        if (thirdQuestion1.isChecked())
+            thirdQuestion1.setChecked(false);
+        RadioButton thirdQuestion2 = (RadioButton) findViewById(R.id.q3a2);
+        if (thirdQuestion2.isChecked())
+            thirdQuestion2.setChecked(false);
+        EditText fourthQuestion = (EditText) findViewById(R.id.q4);
+        fourthQuestion.setText("");
         TextView createTestSummaryTextView = (TextView) findViewById(R.id.finalMessage);
         createTestSummaryTextView.setText("");
 

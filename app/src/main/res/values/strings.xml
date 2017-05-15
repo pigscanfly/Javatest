@@ -16,5 +16,16 @@
     <string name="question4hint">Type result here</string>
     <string name="Reset">Reset</string>
     <string name="submit">Submit</string>
+    <string name="javaQuestion1">\n Question 1:\t </string>
+    <string name="javaQuestion2">\n Question 2:\t</string>
+    <string name="javaQuestion3">\n Question 3:\t</string>
+    <string name="javaQuestion4">\n Question 4:\t</string>
+    <string name="javaScore">\n Score:\t\t</string>
+    <string name="javaFrom">\t from 4</string>
+    <string name="javaResult1">\n Amazing result - all correct.</string>
+    <string name="javaResult2">\n Almost correct - one mistake.</string>
+    <string name="javaResult3">\n Not bad - two mistakes</string>
+    <string name="javaResult4">\n Your results could be better :-( - three mistakes</string>
+    <string name="javaResult5">\n You should learn more - four mistakes</string>
     </resources>
 
